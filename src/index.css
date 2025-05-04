@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --terminal-bg: #000000; /* true black */
+  --terminal-text: #d0d0d0;
+  --terminal-green: #98c379;
+  --terminal-yellow: #e5c07b;
+  --terminal-blue: #61afef;
+  --terminal-purple: #c678dd;
+  --terminal-cyan: #56b6c2;
+  --terminal-red: #e06c75;
+  --terminal-orange: #d19a66;
+  --terminal-pink: #ff79c6;
+  --terminal-gray-dark: #1e1e1e;
+  --terminal-gray: #3a3a3a;
+  --terminal-gray-light: #585858;
+}
+
+:root {
+  font-family: 'JetBrains Mono', monospace;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--terminal-bg);
+  color: var(--terminal-text);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--terminal-gray-dark);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--terminal-gray);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--terminal-gray-light);
+}
+
+/* Blinking cursor */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Terminal glow effect */
+.terminal-glow {
+  text-shadow: 0 0 5px rgba(158, 206, 106, 0.5);
+}
+
+/* ============================= */
+/*     ⬇️ macOS Terminal UI     */
+/* ============================= */
+
+.terminal-window {
+  background-color: rgba(30, 30, 30, 0.85); /* semi-transparent dark */
+  border-radius: 0.75rem;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+/* macOS-style traffic light buttons */
+.mac-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.mac-button {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 9999px;
+  display: inline-block;
+}
+
+.mac-button.red {
+  background-color: #ff5f56;
+}
+
+.mac-button.yellow {
+  background-color: #ffbd2e;
+}
+
+.mac-button.green {
+  background-color: #27c93f;
+}
+
+/* Link styles */
+a {
+  color: var(--terminal-blue);
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+  color: var(--terminal-cyan);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+/* Image hover effects */
+.project-image {
+  transition: all 0.3s ease-in-out;
+}
+
+.project-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Command card hover effects */
+.command-card {
+  transition: all 0.2s ease-in-out;
+}
+
+.command-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Skill category animations */
+.skill-category {
+  transition: all 0.3s ease-in-out;
+}
+
+.skill-category:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Social link hover effects */
+.social-link {
+  transition: all 0.2s ease-in-out;
+}
+
+.social-link:hover {
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Smooth theme transition */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
